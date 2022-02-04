@@ -1,0 +1,108 @@
+{
+    "users": [ 
+      {"Username" : "asim.nazir",
+        "NationalID" : "3440316205133",
+        "Title" : "Mr.",
+        "FirstName" : "Asim",
+        "LastName" : "Nazir",
+        "Address" : "H#33, ST#4,Khushi Town Rahwali",
+        "City" : "Gujranwala",
+        "Country" : "Pakistan"
+      },
+      {"Username" : "muhammad.zain",
+        "NationalID" : "3880316206133",
+        "Title" : "Mr.",
+        "FirstName" : "Muhammad",
+        "LastName" : "Zain",
+        "Address" : "H#2, ST#7,Bharia Town",
+        "City" : "Lahore",
+        "Country" : "Pakistan"
+      },
+      {"Username" : "muhammad.mohsin",
+        "NationalID" : "31050316697133",
+        "Title" : "Mr.",
+        "FirstName" : "Moshin",
+        "LastName" : "Ali",
+        "Address" : "H#14, Muslim Town",
+        "City" : "Hafizabad",
+        "Country" : "Pakistan"
+      },
+      {"Username" : "bilal.khan",
+        "NationalID" : "32050316697778",
+        "Title" : "Mr.",
+        "FirstName" : "Bilal",
+        "LastName" : "Khan",
+        "Address" : "Bukhari Showrooms, Commercial Area",
+        "City" : "Karachi",
+        "Country" : "Pakistan"
+      }
+    ],
+    
+    "accounts": [
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "456789",
+        "Title" : "Muhammad Zain Khan"
+      },
+      {
+        "Username" : "asim.nazir",
+        "AccountNumber" : "369458",
+        "Title" : "Muhammad Asim Nazir"
+      },
+      {
+        "Username" : "asim.nazir",
+        "AccountNumber" : "985698",
+        "Title" : "Muhammad Asim Nazir"
+      },
+      {
+        "Username" : "asim.nazir",
+        "AccountNumber" : "146982",
+        "Title" : "Muhammad Asim Nazir"
+      },
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "007621",
+        "Title" : "Muhammad Zain Khan"
+      },
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "465468",
+        "Title" : "Muhammad Zain Khan"
+      },
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "368716",
+        "Title" : "Muhammad Zain Khan"
+      },
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "987364",
+        "Title" : "Muhammad Zain Khan"
+      },
+      {
+        "Username" : "muhammad.mohsin",
+        "AccountNumber" : "602482",
+        "Title" : "Muhammad Mohsin Jutt"
+      },
+      {
+        "Username" : "muhammad.mohsin",
+        "AccountNumber" : "699765",
+        "Title" : "Muhammad Mohsin Jutt"
+      },
+      {
+        "Username" : "muhammad.mohsin",
+        "AccountNumber" : "021697",
+        "Title" : "Muhammad Mohsin Jutt"
+      },
+      {
+        "Username" : "asim.nazir",
+        "AccountNumber" : "123789",
+        "Title" : "Muhammad Asim Nazir"
+      },
+      {
+        "Username" : "muhammad.zain",
+        "AccountNumber" : "645235",
+        "Title" : "Muhammad Zain Khan"
+      }
+      ]
+  }
