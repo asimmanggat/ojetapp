@@ -27,17 +27,21 @@ define(['../accUtils',
     
       this._initAllFields();
       this._initValidators();
+      this._initEventListerners();
     
   }
   //Input Validators
   DashboardViewModel.prototype._initValidators = function(){
     //Form Inputs Length Validators
     this.inputNamesLengthValidator = ko.observableArray([
-      new AsyncLengthValidator({min:2, max:20}),   
+      new AsyncLengthValidator({
+        min:2,
+        max:20
+        }),  
     ]);
 
   }
-
+ 
 
   //Initialize all observables
   DashboardViewModel.prototype._initAllFields = function(){
@@ -45,15 +49,7 @@ define(['../accUtils',
     this.lastname = ko.observable("");
     this.middlename = ko.observable("");
     this.age = ko.observable();
-
-    // this.isInputNamesFilled = ko.computed(function(){
-    //   if(this.firstname() && this.lastname() && this.middlename()){
-    //     return false;
-    //   }else{
-    //     return true;
-    //   }
-    // }, this);
-
+    this.inputCustomMessages = ko.observableArray([]);
     this.fullname = ko.computed(function(){
       if(this.firstname() && this.lastname() && this.middlename()){
         return this.firstname()+ " " + this.middlename() + " "+ this.lastname();
@@ -61,6 +57,32 @@ define(['../accUtils',
         return null;
       }
     }, this);
+
+    
   };
+
+  //Initialialize all Event Listeners
+  DashboardViewModel.prototype._initEventListerners = function(){
+    //On Value changed Validation
+   this.onInputRawValueChanged = function(event){
+     const value = event.detail.value;
+     if(value){
+     event.currentTarget.validate();
+     this.inputCustomMessages([{
+      summary: "Confirmation Message",
+      detail: "Looks Good!",
+      severity: "confirmation",
+    }]);
+       if(value.length >= 2 && value.length <=20){
+         console.log(value);
+         
+       }      
+     }
+   }
+ };
+
+
+
+
   return DashboardViewModel;
   });

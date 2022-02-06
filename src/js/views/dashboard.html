@@ -13,18 +13,23 @@
   <oj-input-text id="firstname" value="{{firstname}}"
    label-hint="First Name"
    validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputRawValueChanged]]"
+   messages-custom="[[inputCustomMessages]]"
    required>
   </oj-input-text>
 
   <oj-input-text id="middlename" value="{{middlename}}"
    label-hint="Middle Name"
    validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputRawValueChanged]]"
+   
    required>
   </oj-input-text>
 
   <oj-input-text id="lastname" value="{{lastname}}"
    label-hint="Last Name"
    validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputRawValueChanged]]"
    required>
   </oj-input-text>
 
@@ -34,7 +39,8 @@
  </oj-input-text>
  
   <oj-input-number id="age" value="{{age}}"
-  label-hint="Age">
+  label-hint="Age"
+  step="1">
   </oj-input-number>
 
 </oj-form-layout>
