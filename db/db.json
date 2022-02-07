@@ -1,0 +1,28 @@
+{
+    "customers": [
+      { 
+          "firstname": "Muhammad", 
+          "middlename": "Asim",
+          "lastname": "Nazir",
+          "fullname": "Muhammad Asim Nazir",
+          "age": 18,
+          "dob": "1995-04-03"
+        },
+        { 
+            "firstname": "Zain", 
+            "middlename": "Ali",
+            "lastname": "Khan",
+            "fullname": "Zain Ali Khan",
+            "age": 20,
+            "dob": "1997-11-08"
+          },
+          { 
+            "firstname": "Mohsin", 
+            "middlename": "Iqbal",
+            "lastname": "Chaandiyo",
+            "fullname": "Mohsin Iqbal Chandiyo",
+            "age": 31,
+            "dob": "1983-06-05"
+          }
+    ]
+  }
