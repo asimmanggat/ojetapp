@@ -4,43 +4,25 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
  <div class="oj-hybrid-padding">
-  <h1>Accounts</h1>
+  <h1>Users</h1>
+  <oj-table id='table' aria-label='Departments Table'
+                                          data='[[activityDataProvider]]'
+                                          selection-mode='{"row": "multiple", "column": "multiple"}'
+                                          dnd='{"reorder": {"columns": "enabled"}}'
+                                          columns='[{"headerText": "Name", 
+                                                     "field": "$current.data.name",
+                                                     "headerClassName": "oj-sm-only-hide",
+                                                     "className": "oj-sm-only-hide",
+                                                     "resizable": "enabled"},
+                                                    {"headerText": "Username", 
+                                                     "field": "$current.data.username",
+                                                     "resizable": "enabled"},
+                                                    {"headerText": "Email", 
+                                                     "field": "$current.data.email",
+                                                     "headerClassName": "oj-sm-only-hide",
+                                                     "className": "oj-sm-only-hide",
+                                                     "resizable": "enabled"}]'
+                                          class='demo-table-container oj-bg-body'>
+</oj-table>
 
-  <oj-form-layout id='formLayoutOptions' max-columns="2"
-                  direction="row"
-                  class="oj-formlayout-full-width">
-
-  <oj-input-text id="firstname" value="{{firstname}}"
-   label-hint="First Name"
-   validators="[[inputNamesLengthValidator]]"
-   required>
-  </oj-input-text>
-
-  <oj-input-text id="middlename" value="{{middlename}}"
-   label-hint="Middle Name"
-   validators="[[inputNamesLengthValidator]]"
-   required>
-  </oj-input-text>
-
-  <oj-input-text id="lastname" value="{{lastname}}"
-   label-hint="Last Name"
-   validators="[[inputNamesLengthValidator]]"
-   required>
-  </oj-input-text>
-
-  <oj-input-text id="fullname" value="{{fullname}}"
-  label-hint="Full Name"
-  disabled="[[true]]">
- </oj-input-text>
- 
-  <oj-input-number id="age" value="{{age}}"
-  label-hint="Age">
-  </oj-input-number>
-
-</oj-form-layout>
-
-  <!-- <span><oj-bind-text value="[[firstname]]"></oj-bind-text></span>
-  <span><oj-bind-text value="[[lastname]]"></oj-bind-text></span>
-  <span><oj-bind-text value="[[middlename]]"></oj-bind-text></span>
-  <span><oj-bind-text value="[[age]]"></oj-bind-text></span> -->
 </div>

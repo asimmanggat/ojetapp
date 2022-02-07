@@ -19,48 +19,46 @@ define(['../accUtils',
       'ojs/ojinputnumber',
       'ojs/ojtable',
       'ojs/ojformlayout',
+      'ojs/ojdatetimepicker',
+      'ojs/ojbutton',
+      'ojs/ojvalidationgroup'
     ],
 
- function(accUtils, ko, $, AsyncLengthValidator) {
+ function(accUtils, ko, $, AsyncLengthValidator, ArrayDataProvider) {
 
     function DashboardViewModel(){
+      var self = this;
+    self.usersArray = ko.observableArray([]);
+    self.activityDataProvider = ko.observable(); 
+
     
-      this._initAllFields();
-      this._initValidators();
-    
-  }
-  //Input Validators
-  DashboardViewModel.prototype._initValidators = function(){
-    //Form Inputs Length Validators
-    this.inputNamesLengthValidator = ko.observableArray([
-      new AsyncLengthValidator({min:2, max:20}),   
-    ]);
+      
+    let datafromservice;
+      async function getData(){
+        const api_url = "https://jsonplaceholder.typicode.com/users";  
+        try{
+          const response = await fetch(api_url);
+          if(!response.ok) throw Error("Something went wrong...");
+          datafromservice = await response.json();
+        }catch (error){
+          console.log(error);
+        }
+        datafromservice.forEach(element => {
+          self.usersArray.push(new userConstructor(element.name, element.username, element.email));
+        });
+        
+      }  
+      function userConstructor(name, username, email){
+        var self = this;
 
-  }
-
-
-  //Initialize all observables
-  DashboardViewModel.prototype._initAllFields = function(){
-    this.firstname = ko.observable("");
-    this.lastname = ko.observable("");
-    this.middlename = ko.observable("");
-    this.age = ko.observable();
-
-    // this.isInputNamesFilled = ko.computed(function(){
-    //   if(this.firstname() && this.lastname() && this.middlename()){
-    //     return false;
-    //   }else{
-    //     return true;
-    //   }
-    // }, this);
-
-    this.fullname = ko.computed(function(){
-      if(this.firstname() && this.lastname() && this.middlename()){
-        return this.firstname()+ " " + this.middlename() + " "+ this.lastname();
-      }else{
-        return null;
+        self.name = name;
+        self.username = username;
+        self.email = email;
       }
-    }, this);
-  };
+      getData();
+      
+      self.activityDataProvider = new ArrayDataProvider(self.usersArray, { keyAttributes: 'name' });  
+  }
+
   return DashboardViewModel;
   });
