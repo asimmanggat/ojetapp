@@ -98,7 +98,7 @@
             </div>
             <div class="oj-flex-bar-end">
               <!-- Responsive Toolbar -->
-              <oj-toolbar>
+              <!-- <oj-toolbar>
                 <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="borderless">
                   <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
                   <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
@@ -109,21 +109,21 @@
                     <oj-option id="out" value="out">Sign Out</oj-option>
                   </oj-menu>
                 </oj-menu-button>
-              </oj-toolbar>
+              </oj-toolbar> -->
             </div>
           </div>
-          <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
+          <!-- <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
             <oj-navigation-list id="navTabBar" class="oj-sm-only-hide oj-md-condense oj-md-justify-content-flex-end"
                                 data="[[navDataProvider]]"
                                 edge="top"
                                 item.renderer="[[KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
                                 selection="{{selection.path}}">
             </oj-navigation-list>
-          </div>
+          </div> -->
         </header>
         <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
         </oj-module>
-        <footer class="oj-web-applayout-footer" role="contentinfo">
+        <!-- <footer class="oj-web-applayout-footer" role="contentinfo">
           <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
             <ul>
               <oj-bind-for-each data="[[footerLinks]]">
@@ -140,7 +140,7 @@
           <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
             Copyright © 2014, 2021 Oracle and/or its affiliates All rights reserved.
           </div>
-        </footer>
+        </footer> -->
       </div>
     </div>
 

@@ -51,3 +51,16 @@ html[dir="rtl"] .demo-oracle-icon {
       transform:translate(-25%, -25%) scale(0.5)
   }
 }
+/* oj-table, td, th{
+  border: 1px solid black;
+  border-collapse: collapse;
+} */
+/* @media screen and (max-width: 350px) {
+  td, th{
+    display: flex;
+    border-collapse: collapse;
+  }
+  oj-table{
+    border-style: none;
+  }
+} */

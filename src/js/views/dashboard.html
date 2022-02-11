@@ -4,25 +4,30 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
  <div class="oj-hybrid-padding">
-  <h1>Users</h1>
-  <oj-table id='table' aria-label='Departments Table'
-                                          data='[[activityDataProvider]]'
-                                          selection-mode='{"row": "multiple", "column": "multiple"}'
-                                          dnd='{"reorder": {"columns": "enabled"}}'
-                                          columns='[{"headerText": "Name", 
-                                                     "field": "$current.data.name",
-                                                     "headerClassName": "oj-sm-only-hide",
-                                                     "className": "oj-sm-only-hide",
-                                                     "resizable": "enabled"},
-                                                    {"headerText": "Username", 
-                                                     "field": "$current.data.username",
-                                                     "resizable": "enabled"},
-                                                    {"headerText": "Email", 
-                                                     "field": "$current.data.email",
-                                                     "headerClassName": "oj-sm-only-hide",
-                                                     "className": "oj-sm-only-hide",
-                                                     "resizable": "enabled"}]'
-                                          class='demo-table-container oj-bg-body'>
-</oj-table>
-
+    <h1>Accounts</h1>
+    <div class="oj-flex oj-flex-init oj-panel oj-panel-alt4">
+      <div class="oj-flex-item oj-panel oj-panel-alt1">
+        <oj-input-text id="nationalid" value="{{nid}}" class="oj-form-control-max-width-sm" label-hint="Natinal ID">
+        </oj-input-text>
+        <oj-input-text id="accountnumber" value="{{accnumber}}" class="oj-form-control-max-width-sm" label-hint="Account Number">
+        </oj-input-text>
+        <oj-button class="oj-button-lg" disabled=[[check]] on-click="[[checkDisabled]]"> Next
+        </oj-button>
+        <br><br>
+          <p id="message"></p>
+          <div class="oj-flex oj-flex-item oj-panel oj-panel-alt2">
+            <oj-table id='table' aria-label='Accounts Table'
+            data='[[activityDataProvider]]'
+            columns='[{"headerText": "Account Number", 
+                      "field": "$current.data.account",           
+                      "resizable": "disabled"},
+                      {"headerText": "Account Title", 
+                      "field": "$current.data.title",
+                      "resizable": "disabled"}
+                      ]'
+            class='demo-table-container oj-bg-body'>
+            </oj-table>
+          </div>
+        </div>
+  </div>
 </div>
