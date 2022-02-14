@@ -3,9 +3,71 @@
  Licensed under The Universal Permissive License (UPL), Version 1.0
  as shown at https://oss.oracle.com/licenses/upl/
  -->
-<div class="oj-hybrid-padding">
-  <h1>Customers Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the customers.html file located in the /js/views folder.
+ <div class="oj-hybrid-padding">
+  <h1>Accounts</h1>
+
+
+<oj-validation-group id="formValidationGroup" valid="{{groupValid}}">
+  <oj-form-layout id='formLayoutOptions' max-columns="2"
+                  direction="column"
+                  class="oj-formlayout-full-width">
+
+  <oj-input-text id="firstname" value="{{firstname}}"
+   label-hint="First Name"
+   validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputFirstNameRawValueChanged]]"
+   messages-custom="[[inputFirstNameCustomMessage]]"
+   required>
+  </oj-input-text>
+
+  <oj-input-text id="middlename" value="{{middlename}}"
+   label-hint="Middle Name"
+   validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputMiddleNameRawValueChanged]]"
+   messages-custom="[[inputMiddleNameCustomMessage]]"
+   required>
+  </oj-input-text>
+
+  <oj-input-text id="lastname" value="{{lastname}}"
+   label-hint="Last Name"
+   validators="[[inputNamesLengthValidator]]"
+   on-raw-value-changed="[[onInputLastNameRawValueChanged]]"
+   messages-custom="[[inputLastNameCustomMessage]]"
+   required>
+  </oj-input-text>
+
+  <oj-input-text id="fullname" value="{{fullname}}"
+  label-hint="Full Name"
+  disabled="[[true]]">
+ </oj-input-text>
+ 
+  <oj-input-number id="age" value="{{age}}"
+  label-hint="Age"
+  step="1"
+  min="18"
+  max="100">
+  </oj-input-number>
+
+  <oj-input-date label-hint="Date Of Birth"
+  value="{{birthday}}"
+  autocomplete="off"
+  min="1905-01-01"
+  max="2005-01-01"
+  required
+  >
+  </oj-input-date>
+
+
+  <div class="oj-flex oj-sm-flex-items-initial oj-sm-justify-content-flex-end">
+    <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+        <oj-button on-oj-action='[[onResetClick]]'>
+          Reset
+        </oj-button>
+        <oj-button on-oj-action='[[onSubmitClick]]'>
+          Submit
+        </oj-button>
+    </div>
   </div>
+</oj-form-layout>
+</oj-validation-group>
 </div>

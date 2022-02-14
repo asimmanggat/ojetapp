@@ -44,7 +44,7 @@ define(['../accUtils',
       self.messageArray = ko.observableArray([]);
       
 
-      var url = "http://localhost:8080/JavaAPI/users";  //defines link to local data file
+      var url = "http://localhost:8080/JpaApi/";  //defines link to local data file
       self.activityDataProvider = ko.observable(); 
       self.messageDataProvider = ko.observable(); 
       // Get Activities objects from file using jQuery method and a method to return a Promise
@@ -61,16 +61,14 @@ define(['../accUtils',
         var found = 0;
         let message = "";
         $.getJSON(url, function(data){
-          console.log(data);
-            
             for(i; i<data.Users.length; i++)
             {           
-              if(self.nid() === data.Users[i].nationalID){                 
+              if(self.nid() === data.Users[i].NationalID){                 
                       found = 1;
-                      message += `${data.Users[i].title}, ${data.Users[i].firstName} ${data.Users[i].lastName} 
+                      message += `${data.Users[i].Title}, ${data.Users[i].FirstName} ${data.Users[i].LastName} 
                       you have Following list of accounts`;
                       for(j; j<data.Accounts.length; j++){
-                          if(checkUsers(data.Accounts[j].username, data.Users[i].username)){
+                          if(checkUsers(data.Accounts[j].username, data.Users[i].Username)){
                               var a = data.Accounts[j].accountnumber;
                               var b = data.Accounts[j].title;
                               var obj = new accInfo(a,b);
@@ -83,6 +81,7 @@ define(['../accUtils',
             if(found == 0){
                 message += "<p><strong>User doesn’t exist with the input details</strong></p>";
             }
+            
             document.getElementById("message").innerHTML = message;
             self.activityDataProvider(new ArrayDataProvider(self.usersArray, { keyAttributes: 'account' }));
             self.messageDataProvider(new ArrayDataProvider(self.messageArray, { keyAttributes: 'title' }));          
